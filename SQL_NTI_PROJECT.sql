@@ -137,6 +137,10 @@ order by AverageQuantityPerOrder desc;
 
 ------------------------------------------------
 
+/*=================================
+			Revenue 
+===================================*/
+
 --Q14.NET revenue after removing discounts
 
 select sum(Quantity * Price) as TotalDiscount
