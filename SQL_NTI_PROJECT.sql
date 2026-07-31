@@ -1,4 +1,8 @@
 
+/*=================================
+			Products 
+===================================*/
+
 -- Q1.What are the top 10 products by revenue?
 select top 10 StockCode,Description, sum(Quantity) as total_quantity,
 sum(Quantity * Price ) as total_revenue
@@ -46,6 +50,12 @@ join NTI_cleaned b
     and a.StockCode < b.StockCode
 group by  a.Description, b.Description
 order by TimesPurchasedTogether desc;
+
+
+/*=================================
+			Customers 
+===================================*/
+
 ---------------------------------------------------------------------------------------------
 --Q7. Which customers order most frequently, and what is their average order value? 
 select Customer_ID,count(distinct Invoice) as NumberOfOrders,
@@ -81,6 +91,10 @@ group by Customer_ID order by Monetary desc;
 
 --------------------------------------------------------------------------
 
+/*=================================
+			Month / Year 
+===================================*/
+
 -- Q10.How does monthly revenue trend over the two years? 
 select
 year(InvoiceDate) as year,
@@ -98,6 +112,10 @@ group by datename(weekday, InvoiceDate)
 order by total_revenue desc;
 
 -------------------------------------------------------------------------------------------------
+
+/*=================================
+			Country 
+===================================*/
 
 -- Q12.Which countries generate the most revenue, and how concentrated is it? 
 select Country,sum(Quantity * Price) as total_revenue ,
@@ -118,6 +136,7 @@ order by AverageQuantityPerOrder desc;
 -- Denmark has the highest numbers of order but United Kingdom has the highest revenue
 
 ------------------------------------------------
+
 --Q14.NET revenue after removing discounts
 
 select sum(Quantity * Price) as TotalDiscount
