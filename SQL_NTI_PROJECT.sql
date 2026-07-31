@@ -8,14 +8,14 @@ select top 10 StockCode,Description, sum(Quantity) as total_quantity,
 sum(Quantity * Price ) as total_revenue
 from NTI_cleaned
 group by StockCode , Description
-order by total_revenue desc
+order by total_revenue desc, total_quantity desc
 ----------------------------------------------------------------------------------------------
 -- Q2.What are products that have less revenue?
 select top 20 StockCode,Description, sum(Quantity) as total_quantity,
 sum(Quantity * Price ) as total_revenue
 from NTI_cleaned
 group by StockCode , Description
-order by total_revenue asc
+order by total_revenue asc , total_quantity asc
 --------------------------------------------------------------------------------------------
 --Q3. Which products generate high revenue despite low Quantity?
 select StockCode,Description,
