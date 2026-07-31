@@ -150,7 +150,7 @@ where StockCode = 'D';
 select sum (Quantity * Price) as Revenue
 from NTI_cleaned;
 
-select (select sum(Quantity * Price) from NTI_cleaned where StockCode <> 'D')
+select (select sum(Quantity * Price) from NTI_cleaned)
 -
 (select abs(sum(Quantity * Price)) from NTI_cleaned where StockCode = 'D') as Revenue;
 
