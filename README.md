@@ -21,3 +21,4 @@
   Sales
   Products
   Returns
+6.Insights and recommendations	12
